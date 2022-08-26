@@ -1,0 +1,18 @@
+Feature: Open and Close Modal Box
+    As a web3 student 
+    I want to be able to open the modal box
+    To validate if the html code is working
+
+    Background: Access the page How To Create Modal Box
+        Given the user accessed the menu "Tutorials"
+        And the user accessed the menu item "Learn How To"
+        And the user accessed the side menu item "Modal Boxes" 
+
+    Scenario: Open modal box   
+        When the user clicks the button "Open Modal"
+        Then the modal with id "id01" should be visible
+
+    Scenario: Close modal box
+        When the user clicks the button "Open Modal"
+        And the user clicks to close the modal
+        Then the modal with id "id01" should be invisible

@@ -1,0 +1,21 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitor-92/desafio-neoway.git"
+  },
+  "author": "vitor-92",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitor-92/desafio-neoway/issues"
+  },
+  "homepage": "https://github.com/vitor-92/desafio-neoway#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.25.1",
+    "playwright": "^1.25.1"
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "nome": "Cart00",
+            "email": "Cart00@Neo.com.br",
+            "password": "Cart.012",
+            "administrador": "true"
+        }
+    ],
+    "products": [
+        {
+            "nome": "Neo Product Keyboard",
+            "preco": 999,
+            "descricao": "Teclado mecânico",
+            "quantidade": 999
+        },
+        {
+            "nome": "Neo Product Mouse",
+            "preco": 333,
+            "descricao": "Mouse Gamer",
+            "quantidade": 333
+        }
+    ]
+}

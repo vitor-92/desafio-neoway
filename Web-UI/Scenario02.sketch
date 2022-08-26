@@ -1,0 +1,21 @@
+Feature: Check colors in the table
+    As a web3 student 
+    I want to validate some Colors at the table
+    To validate if the table have the correct hexadecimal values to the correct colors
+
+    Scenario Outline: Validate colors table values
+        Given the user accessed the menu "Tutorials"
+        And the user accessed the menu item "Learn Colors"
+        And the user accessed the side menu item "Color Groups"  
+        When the color in the table is <color>
+        Then the hexdecimal code should be <hexadecimal>
+
+        Examples:
+            | color         | hexadecimal   |
+            | Black         |   #000000     |
+            | Maroon        |   #800000     |
+            | Gold          |   #FFD700     |
+            | Cyan          |   #00FFFF     |
+            | Blue          |   #0000FF     |
+            | Silver        |   #C0C0C0     |
+            | BlueViolet    |   #8A2BE2     |

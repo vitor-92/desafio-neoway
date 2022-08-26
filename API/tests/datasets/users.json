@@ -1,0 +1,34 @@
+{
+    "users": [
+        {
+            "nome": "Neo00",
+            "email": "Neo00@Neo.com.br",
+            "password": "Neo.012",
+            "administrador": "true"
+        },
+        {
+            "nome": "Neo01",
+            "email": "Neo01@Neo.com.br",
+            "password": "Neo.112",
+            "administrador": "false"
+        },
+        {
+            "nome": "Neo02",
+            "email": "Neo02@Neo.com.br",
+            "password": "Neo.212",
+            "administrador": "false"
+        },
+        {
+            "nome": "Neo03",
+            "email": "Neo02@Neo.com.br",
+            "password": "Neo.212",
+            "administrador": "false"
+        },
+        {
+            "nome": "Neo04",
+            "email": "Neo02@Neo.com.br",
+            "password": "Neo.212",
+            "administrador": "false"
+        }
+    ]
+}

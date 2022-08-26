@@ -1,0 +1,18 @@
+Feature: Check 
+    As a web3 student 
+    I want to validate the values in another page
+
+    Scenario Outline: Validate colors table values
+        Given the user accessed the menu "Tutorials"
+        And the user accessed the menu item "Learn HTML"
+        And the user accessed the side menu item "HTML Forms"  
+        When I click try it yourself with filename "tryhtml_form_submit"
+        And fill the field with id "fname" with the value <firstName>
+        And fill the field with id "lname" with the value <lastName>
+        And Click the button submit
+        Then verify if the result have the values <firstName> and <lastName>
+
+        Examples:
+            | firstName | lastName  |
+            | vitor     |   silva   |
+            | silvio    |   santos  |
