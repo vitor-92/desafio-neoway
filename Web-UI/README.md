@@ -21,5 +21,5 @@
     - Ótima documentação.
     - Possibilidade de testes de API.
 
-    [Playwright](https://playwright.dev/)
+    [Playwright]:(https://playwright.dev/)
 
