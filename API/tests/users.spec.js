@@ -1,6 +1,6 @@
-const { test, expect, request } = require('@playwright/test');
+import { test, expect, request } from '@playwright/test';
 
-const { UsersRequests } = require("./support/users");
+import UsersRequests from "./support/users.js";
 
 const baseURL = 'https://serverest.dev';
 const dataset = require('./datasets/users');
@@ -23,7 +23,7 @@ test('Register user - verify status ok', async () => {
     expect(responseJson.message).toEqual('Cadastro realizado com sucesso');
     expect(responseJson._id.length).toEqual(16);
 
-    const userRequest = new UsersRequests();
+    const userRequest = new UsersRequests(null);
     await userRequest.deleteUser(responseJson._id);
 });
 

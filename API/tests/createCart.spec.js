@@ -1,23 +1,23 @@
 import { expect, test } from "@playwright/test"
 
-import { UsersRequests } from "./support/users"
-import { ProductsRequests } from "./support/products";
-import { CartsRequests } from "./support/carts";
+import UsersRequests from "./support/users"
+import ProductsRequests from "./support/products";
+import CartsRequests from "./support/carts";
 
-const datasetUser = require("./datasets/users");
 const datasetProduct = require("./datasets/createCard");
 
 test('Conclude Cart - verify product quantities', async () => {
     const user = new UsersRequests();
-    const user_id = await user.registerUser(datasetUser.users[0]);
+    const user_id = await user.registerUser(datasetProduct.users[0]);
 
-    const token = await user.login(datasetUser.users[0]);
+    const token = await user.login(datasetProduct.users[0]);
 
     const product = new ProductsRequests();
     const product_id = [];
     product_id[0] = await product.registerProduct(datasetProduct.products[0], token);
     product_id[1] = await product.registerProduct(datasetProduct.products[1], token);
 
+    
     const qntProduct = [1, 5];
     const products = [
         {
@@ -38,7 +38,7 @@ test('Conclude Cart - verify product quantities', async () => {
 
     let productData = [];
     productData[0] = await product.findProduct(product_id[0]);
-    productData[1] = await product.findProduct(product_id[1]);    
+    productData[1] = await product.findProduct(product_id[1]);
 
     expect(productData[0].quantidade).toEqual(datasetProduct.products[0].quantidade - qntProduct[0]);
     expect(productData[1].quantidade).toEqual(datasetProduct.products[1].quantidade - qntProduct[1]);

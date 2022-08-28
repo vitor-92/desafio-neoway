@@ -1,4 +1,4 @@
-const { request } = require('@playwright/test');
+import { request } from '@playwright/test';
 
 const baseURL = 'https://serverest.dev';
 
@@ -54,4 +54,4 @@ class UsersRequests {
     }
 }
 
-module.exports = { UsersRequests }
+export default UsersRequests 
