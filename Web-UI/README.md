@@ -18,5 +18,5 @@ Utilizei o playwright para a automação dos cenários porque é um framework qu
 - Ótima documentação.
 - Possibilidade de testes de API.
 
-<a href=“https://playwright.dev/“>Playwright</a>
+https://playwright.dev/
 
