@@ -12,6 +12,6 @@ npx playwright test --help
 
 ## Ferramenta: Playwright
 Utilizei o playwright tanto para Web-UI quanto para API.
-[Readme]:(../API/README.md)
-[playwright]:(https://playwright.dev/)
+[Readme]:("../API/README.md")
+[playwright]:("https://playwright.dev/")
 
