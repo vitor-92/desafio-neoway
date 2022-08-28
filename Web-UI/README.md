@@ -7,7 +7,8 @@
     npx playwright test
 
 ## Ferramenta: Playwright
-    - Utilizei o playwright para a automação dos cenários porque é um framework que está crescendo no mercado, e contém bastantes pontos positivos:
+    - Utilizei o playwright para a automação dos cenários porque é um framework que traz agilidade no desenvolvimento,
+    e conta com muitos pontos positivos:
     - Full paralelismo gratuito.
     - Multi browsers e plataformas.
     - Auto waits.
