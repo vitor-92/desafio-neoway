@@ -16,7 +16,7 @@ const config = {
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  reporter: [['html'], ['list']],
   use: {
     baseURL: 'https://serverest.dev/',
     actionTimeout: 0,

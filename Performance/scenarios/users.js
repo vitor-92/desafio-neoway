@@ -14,8 +14,7 @@ export const options = {
   ],
   thresholds: {
     http_req_failed: ["rate < 0.1"], // http errors should be less than 0.1%
-     // 90% of requests must finish within 400ms, 95% within 800, and 99.9% within 2s.
-     http_req_duration: ['p(90) < 200', 'p(95) < 100', 'p(99.9) < 400'],
+     http_req_duration: ['p(90) < 200', 'p(95) < 150'],
   },
 };
 

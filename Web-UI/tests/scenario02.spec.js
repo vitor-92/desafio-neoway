@@ -1,14 +1,31 @@
-const { test, expect } = require('@playwright/test');
+const { test } = require('@playwright/test');
+
+import { HomePage } from "./pageObjects/homePage";
+import { ColorsPage } from "./pageObjects/colorsPage"
 
 test('Verify Color Table Values', async ({ page }) => {
-  await page.goto('https://www.w3schools.com/');
-  await page.locator('[title="Tutorials"]').click();
-  await page.locator('.w3-bar-item:has-text("Learn Colors")').click();
-  await page.locator('[href="colors_groups.asp"]').first().click();
+  const homePage = new HomePage(page);
+  const colorsPage = new ColorsPage(page);
 
-  await expect(page).toHaveURL(/.*colors_groups.asp/);
+  await homePage.gotoHome();
 
-  const row = page.locator('[href="color_tryit.asp?hex=000000"]').locator('..').locator('..');
-  await expect(row.locator('[href="color_tryit.asp?color=Black"]')).toHaveText('Black');
-  expect(await row.locator('[bgcolor="#000000"]').isVisible()).toBeTruthy();
+  await homePage.clickNavItemByTitle('Tutorials');
+  await homePage.clickBarItemByText('Learn Colors');
+  await homePage.clickSideBarItemByHref('colors_groups.asp');
+
+  await homePage.verifyUrl(/.*colors_groups.asp/);
+
+  const colorsToVerify = [
+    ['000000', 'Black'],
+    ['800000', 'Maroon'],
+    ['FFD700', 'Gold'],
+    ['0000FF', 'Blue'],
+    ['C0C0C0', 'Silver'],
+    ['8A2BE2', 'BlueViolet'],
+    // ['00FFFF', 'Cyan'] // Cor duplicada no site
+  ];
+
+  for (let i = 0; i < colorsToVerify.length; i++) {
+    await colorsPage.verifyColorTableItems(colorsToVerify[i][0], colorsToVerify[i][1]);
+  }
 });

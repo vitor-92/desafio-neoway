@@ -1,33 +1,38 @@
-const { test, expect } = require('@playwright/test');
+const { test } = require('@playwright/test');
+
+import { HomePage } from "./pageObjects/homePage";
+import { HowToPage } from "./pageObjects/howToPage";
 
 test('Verify Open Modal Box', async ({ page }) => {
-  await page.goto('https://www.w3schools.com/');
-  await page.locator('[title="Tutorials"]').click();
-  await page.locator('.w3-bar-item:has-text("Learn How To")').click();
-  await page.locator('[href="howto_css_modals.asp"]').first().click();
+  const homePage = new HomePage(page);
+  const howToPage = new HowToPage(page);
 
-  await expect(page).toHaveURL(/.*howto_css_modals.asp/);
-  await expect(page).toHaveTitle('How To Make a Modal Box With CSS and JavaScript');
+  await homePage.gotoHome();
 
-  const btnModal = page.locator(`//button[contains(text(),'Open Modal')]`);
-  await btnModal.click();
+  await homePage.clickNavItemByTitle('Tutorials');
+  await homePage.clickBarItemByText('Learn How To');
+  await homePage.clickSideBarItemByHref('howto_css_modals.asp');
 
-  expect(page.locator('w3-modal').isVisible()).toBeTruthy();
+  await homePage.verifyTitleText('How To Make a Modal Box With CSS and JavaScript');
 
-  await expect(btnModal).toHaveAttribute('class', 'ws-btn w3-dark-grey');
+  await howToPage.btnOpenModal.click();
+  await howToPage.verifyModalVisible();
 });
 
 test('Verify Close Modal Box', async ({ page }) => {
-  await page.goto('https://www.w3schools.com/');
-  await page.locator('[title="Tutorials"]').click();
-  await page.locator('.w3-bar-item:has-text("Learn How To")').click();
-  await page.locator('[href="howto_css_modals.asp"]').first().click();
+  const homePage = new HomePage(page);
+  const howToPage = new HowToPage(page);
 
-  await expect(page).toHaveURL(/.*howto_css_modals.asp/);
-  await expect(page).toHaveTitle('How To Make a Modal Box With CSS and JavaScript');
+  await homePage.gotoHome();
 
-  await page.locator(`//button[contains(text(),'Open Modal')]`).click();
+  await homePage.clickNavItemByTitle('Tutorials');
+  await homePage.clickBarItemByText('Learn How To');
+  await homePage.clickSideBarItemByHref('howto_css_modals.asp');
 
-  await page.locator('//header/span[1]').click();
-  expect(await page.locator('w3-modal').isVisible()).toBeFalsy();
+  await homePage.verifyUrl(/.*howto_css_modals.asp/);
+
+  await howToPage.btnOpenModal.click();
+  await howToPage.verifyModalVisible();
+  await howToPage.btnCloseModal.click();
+  await howToPage.verifyModalNotVisible();
 });
