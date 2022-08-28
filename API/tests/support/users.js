@@ -1,4 +1,4 @@
-const { expect, request } = require('@playwright/test');
+const { request } = require('@playwright/test');
 
 const baseURL = 'https://serverest.dev';
 
@@ -46,10 +46,10 @@ class UsersRequests {
             const apiContext = await request.newContext();
             const deleteUser = await apiContext.delete(`${baseURL}/usuarios/` + user_Id);
 
-            return true;
+            return deleteUser.status();
         } catch (error) {
             console.log(error);
-            return false;
+            return null;
         }
     }
 }

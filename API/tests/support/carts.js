@@ -1,4 +1,4 @@
-const { expect, request } = require('@playwright/test');
+const { request } = require('@playwright/test');
 
 const baseURL = 'https://serverest.dev';
 
@@ -32,10 +32,10 @@ class CartsRequests {
                 },
             });
 
-            return true;
+            return cancelCart.status();
         } catch (error) {
             console.log(error);
-            return false;
+            return null;
         }
     }
 
@@ -48,10 +48,10 @@ class CartsRequests {
                 },
             });
 
-            return true;
+            return concludeCart.status();
         } catch (error) {
             console.log(error);
-            return false;
+            return null;
         }
     }
 }
