@@ -6,12 +6,11 @@
     npx playwright test
 ```
 #### Params
-- Para rodar um arquivo específico
-    - npx playwright test tests/createCart.spec.js
-- Para rodar headhed/headless
-    - npx playwright test --headed
-- Debug mode
-    - npx playwright test --headed --debug
+Para visualizar parâmetros
+```
+npx playwright test --help
+```
+
 
 ## Ferramenta: Playwright
 Utilizei o playwright para a automação dos cenários porque é um framework que traz agilidade no desenvolvimento e conta com muitos pontos positivos:

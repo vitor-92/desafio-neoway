@@ -5,6 +5,8 @@
     sudo npx playwright install-deps && \
     npx playwright test
 ```
+
+#### Params
 Para visualizar parâmetros
 ```
 npx playwright test --help
