@@ -1,21 +1,29 @@
-## Para rodar os testes
+## Para rodar os testes localmente
 #### Dentro da pasta Web-UI, execute os seguintes comandos
 ```
     npm ci && \
     sudo npx playwright install-deps && \
-    npx playwright test
+    npm playwright test
 ```
+
+## Para rodar os testes em Dockerlocalmente
+#### Dentro da pasta Web-UI, execute os seguintes comandos
+```
+    docker build -t docker-neo-web-ui .
+    docker run -it docker-neo-web-ui:latest npm run test
+```
+    
 #### Params
 Para visualizar parâmetros
 ```
-npx playwright test --help
+npm playwright test --help
 ```
 
 
 ## Ferramenta: Playwright
 Utilizei o playwright para a automação dos cenários porque é um framework que traz agilidade no desenvolvimento e conta com muitos pontos positivos:
 - Full paralelismo gratuito.
-- Cross-browser. Playwright supports all modern rendering engines including Chromium, WebKit, and Firefox.
+- Cross-browser. Engines(Chromium, WebKit, and Firefox).
 - Cross-platform. (Windows, Linux, and macOS, locally or on CI, headless or headed).
 - Auto waits.
 - Geração do relatório bem simples.
