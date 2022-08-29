@@ -3,7 +3,7 @@
 ```
     npm ci && \
     sudo npx playwright install-deps && \
-    npx playwright test
+    npm playwright test
 ```
 ## Para rodar os testes no Docker
 ```
@@ -15,13 +15,13 @@
 ```
     npm ci && \
     sudo npx playwright install-deps && \
-    npx playwright test
+    npm playwright test
 ```
 
 #### Params
 Para visualizar parâmetros
 ```
-npx playwright test --help
+npm playwright test --help
 ```
 
 ## Ferramenta: Playwright
