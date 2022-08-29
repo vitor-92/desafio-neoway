@@ -14,13 +14,13 @@ sudo apt-get install k6
 
 ## Rodando o Script
 
-    - Dentro da pasta Performance-k6, rodar o comando:
+Dentro da pasta Performance-k6, rodar o comando:
 ```    
-    - k6 run scenarios/users.js
+k6 run scenarios/users.js
 ```
-## Rodando grafana e k6
+## Rodando k6 com grafana via docker-compose
 
-    - Dentro da pasta Performance-k6, rodar o comando:
+Dentro da pasta Performance-k6, rodar o comando:
 ```   
 docker-compose up -d
 
