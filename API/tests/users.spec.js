@@ -5,7 +5,6 @@ import UsersRequests from "./support/users.js";
 const baseURL = 'https://serverest.dev';
 const dataset = require('./datasets/users');
 
-
 test('Register user - verify status ok', async () => {
     const user = dataset.users[0];
     const apiContext = await request.newContext();
@@ -100,7 +99,7 @@ test('Register user - verify status fail - user registered', async () => {
     await userRequest.deleteUser(user_id);
 });
 
-test('Delete user - verify status ok', async () => {
+test('Delete user - verify status ok - user deleted', async () => {
     const userRequest = new UsersRequests();
     const user_id = await userRequest.registerUser(dataset.users[2]);
 
@@ -111,4 +110,14 @@ test('Delete user - verify status ok', async () => {
 
     const responseJson = await deleteUser.json();
     expect(responseJson.message).toEqual('Registro excluído com sucesso');
+});
+
+test('Delete user - verify status ok - no user', async () => {
+    const apiContext = await request.newContext();
+    const deleteUser = await apiContext.delete(`${baseURL}/usuarios/ATest`);
+
+    expect(deleteUser.status()).toEqual(200);
+
+    const responseJson = await deleteUser.json();
+    expect(responseJson.message).toEqual('Nenhum registro excluído');
 });
