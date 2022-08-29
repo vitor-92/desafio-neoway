@@ -6,7 +6,7 @@
     npm playwright test
 ```
 
-## Para rodar os testes localmente
+## Para rodar os testes em Dockerlocalmente
 #### Dentro da pasta Web-UI, execute os seguintes comandos
 ```
     docker build -t docker-neo-web-ui .
