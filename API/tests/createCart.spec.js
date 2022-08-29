@@ -16,7 +16,6 @@ test('Conclude Cart - verify product quantities', async () => {
     const product_id = [];
     product_id[0] = await product.registerProduct(datasetProduct.products[0], token);
     product_id[1] = await product.registerProduct(datasetProduct.products[1], token);
-
     
     const qntProduct = [1, 5];
     const products = [
