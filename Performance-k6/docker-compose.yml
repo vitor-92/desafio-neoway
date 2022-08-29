@@ -33,6 +33,7 @@ services:
 
   k6:
     image: loadimpact/k6:latest
+    command: run /scripts/script.js
     networks:
       - k6
     ports:

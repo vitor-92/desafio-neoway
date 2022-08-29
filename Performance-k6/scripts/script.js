@@ -10,9 +10,9 @@ export function handleSummary(data) {
 
 export const options = {
   stages: [
-    { duration: '10s', target: 5 },
-    { duration: '10s', target: 5 },
-    { duration: '10s', target: 0 }
+    { duration: '5s', target: 5 },
+    { duration: '5s', target: 5 },
+    { duration: '5s', target: 0 }
   ],
   thresholds: {
     http_req_failed: ["rate < 0.1"],
@@ -20,7 +20,12 @@ export const options = {
   },
 };
 
+export const CounterErrors = new Counter('Errors');
 export const requests = new Counter("http_reqs");
+
 export default function () {
-  http.get("https://serverest.dev/usuarios");
+  const res = http.get("https://serverest.dev/usuarios");
+  if (res.status >= 400) {
+    CounterErrors.add(1);
+  }
 }
