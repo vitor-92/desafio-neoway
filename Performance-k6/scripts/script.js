@@ -20,12 +20,12 @@ export const options = {
   },
 };
 
-export const CounterErrors = new Counter('Errors');
+export const CountErrors = new Counter('errors');
 export const requests = new Counter("http_reqs");
 
 export default function () {
   const res = http.get("https://serverest.dev/usuarios");
   if (res.status >= 400) {
-    CounterErrors.add(1);
+    CountErrors.add(1);
   }
 }
