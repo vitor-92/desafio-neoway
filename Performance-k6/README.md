@@ -14,23 +14,18 @@ sudo apt-get install k6
 
 ## Rodando o Script
 
-    - Dentro da pasta Performance-k6, rodar o comando:
+Dentro da pasta Performance-k6, rodar o comando:
 ```    
-    - k6 run scenarios/users.js
+k6 run scenarios/users.js
 ```
-## Rodando grafana e k6
+## Rodando k6 com grafana via docker-compose
 
-    - Dentro da pasta Performance-k6, rodar o comando:
+Dentro da pasta Performance-k6, rodar o comando:
 ```   
 docker-compose up -d
-
 ```    
-```    
-k6 run --out influxdb=http://localhost:8086/k6 scripts/script.js
-
-```
-
-## Visualizar resultado: [LINK](http://localhost:3000/d/k6/k6-load-testing-results?orgId=1&refresh=5s)
+Para visualizar os resultados do k6 rodando nos containers: 
+depois de ter rodado o comando "docker-compose up -d", visite a página http://localhost:3000
 
 
 
