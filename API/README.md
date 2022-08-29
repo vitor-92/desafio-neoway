@@ -1,23 +1,17 @@
-## Para rodar os testes localmente
-#### Dentro da pasta API, execute os seguintes comandos
+## Rodando os testes localmente
+#### Dentro da pasta API, execute os seguintes comandos para a instalação de algumas dependências e execução dos testes
 ```
     npm ci && \
     sudo npx playwright install-deps && \
     npm playwright test
 ```
-## Para rodar os testes no Docker
+## Para rodar os testes utilizando Docker, você precisa buildar a imagem e executá-la
+#### Dentro da pasta  API, execute os seguintes comandos
 ```
     docker build -t docker-neo-api .
     
     docker run -it docker-neo-api:latest npm run test
 ```
-#### Dentro da pasta API, execute os seguintes comandos
-```
-    npm ci && \
-    sudo npx playwright install-deps && \
-    npm playwright test
-```
-
 #### Params
 Para visualizar parâmetros
 ```
