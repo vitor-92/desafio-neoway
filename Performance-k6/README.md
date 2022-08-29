@@ -24,7 +24,8 @@ Dentro da pasta Performance-k6, rodar o comando:
 ```   
 docker-compose up -d
 ```    
-Para visualizar os resultados: [LINK](http://localhost:3000/d/k6/k6-load-testing-results?orgId=1&refresh=5s)
+Para visualizar os resultados do k6 rodando nos containers: 
+depois de ter rodado o comando "docker-compose up -d", visite a página http://localhost:3000
 
 
 
