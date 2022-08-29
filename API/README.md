@@ -1,4 +1,16 @@
-## Para rodar os testes
+## Para rodar os testes localmente
+#### Dentro da pasta API, execute os seguintes comandos
+```
+    npm ci && \
+    sudo npx playwright install-deps && \
+    npx playwright test
+```
+## Para rodar os testes no Docker
+```
+    docker build -t docker-neo-api .
+    
+    docker run -it docker-neo-api:latest npm run test
+```
 #### Dentro da pasta API, execute os seguintes comandos
 ```
     npm ci && \
@@ -18,4 +30,6 @@ Utilizei o playwright tanto para Web-UI quanto para API.
 [Motivos](https://github.com/vitor-92/desafio-neoway/tree/master/Web-UI#readme)
 
 [Playwright](https://playwright.dev/)
+
+
 
