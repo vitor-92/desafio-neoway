@@ -25,10 +25,6 @@ sudo apt-get install k6
 docker-compose up -d
 
 ```    
-```    
-k6 run --out influxdb=http://localhost:8086/k6 scripts/script.js
-
-```
 
 ## Visualizar resultado: [LINK](http://localhost:3000/d/k6/k6-load-testing-results?orgId=1&refresh=5s)
 
